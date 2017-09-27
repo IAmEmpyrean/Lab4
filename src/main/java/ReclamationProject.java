@@ -10,17 +10,21 @@
 
 public class ReclamationProject
 {
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
+    static String doit(String a,String b){ // imports two strings
+        if (a.length() > b.length()){ // if a is longer than b
+            String c = a; // set c to a
+            a=b; b=c;} // set a to b and b to c
         String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
         /*
          * For loop with i
          */
+     // iterates over the length of a
         for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+                for (int k = 0; k < b.length()- j; k++) {//iterates over the length of b
+                    //sets r to a substring (i to i+j-1)
+                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r;
+                        }}
+        }
+        return r; // returns the string r
+        }
 }
